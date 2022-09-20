@@ -1,9 +1,9 @@
 package Stack;
 
 class Stack {
-    private int arr[];
-    private int top;
-    private int max;
+    int arr[];
+    int top;
+    int max;
 
     Stack(int size) {
         arr = new int[size];
@@ -49,6 +49,7 @@ class Stack {
         for (int i = 0; i <= top; i++) {
             System.out.println(arr[i]);
         }
+        System.out.println();
     }
 
     public static void main(String[] args) {
@@ -59,9 +60,10 @@ class Stack {
         stack.push(5);
         stack.print();
         stack.push(1);
+        stack.print();
         stack.push(9);
         stack.pop();
-        System.out.println("\nAfter popping out");
+        System.out.println("After popping out");
         stack.print();
 
     }
