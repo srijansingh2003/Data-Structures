@@ -28,4 +28,19 @@ class Stack {
         }
         return arr[top--];
     }
+
+    // Size of the Stack
+    public int size() {
+        return top + 1;
+    }
+
+    // Check condition for Underflow
+    public Boolean isEmpty() {
+        return top == -1;
+    }
+
+    // Check condition for Overflow
+    public Boolean isFull() {
+        return top == max - 1;
+    }
 }
