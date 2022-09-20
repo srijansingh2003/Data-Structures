@@ -19,4 +19,13 @@ class Stack {
         }
         arr[++top] = x;
     }
+
+    // Removing Element from Stack
+    public void pop() {
+        if (isEmpty()) {
+            System.out.println("Underflow");
+            System.exit(1);
+        }
+        return arr[top--];
+    }
 }
