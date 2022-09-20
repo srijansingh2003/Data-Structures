@@ -38,4 +38,22 @@ class Queue {
             items[rear] = x;
         }
     }
+
+    // Removing an element from Queue
+    public int deQueue() {
+        int x;
+        if (isEmpty()) {
+            System.out.println("Queue is empty");
+        } else {
+            x = items[front];
+            if (front >= rear) {
+                front = -1;
+                rear = -1;
+            } else {
+                front++;
+            }
+        }
+        System.out.println("Deleted:" + x);
+        return x;
+    }
 }
