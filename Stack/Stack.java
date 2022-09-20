@@ -21,7 +21,7 @@ class Stack {
     }
 
     // Removing Element from Stack
-    public void pop() {
+    public int pop() {
         if (isEmpty()) {
             System.out.println("Underflow");
             System.exit(1);
@@ -42,5 +42,27 @@ class Stack {
     // Check condition for Overflow
     public Boolean isFull() {
         return top == max - 1;
+    }
+
+    // Printing Stack
+    public void print() {
+        for (int i = 0; i <= top; i++) {
+            System.out.println(arr[i]);
+        }
+    }
+
+    public static void main(String[] args) {
+        Stack stack = new Stack(5);
+
+        stack.push(3);
+        stack.push(2);
+        stack.push(5);
+        stack.print();
+        stack.push(1);
+        stack.push(9);
+        stack.pop();
+        System.out.println("\nAfter popping out");
+        stack.print();
+
     }
 }
