@@ -56,4 +56,17 @@ class Queue {
         System.out.println("Deleted:" + x);
         return x;
     }
+
 }
+
+    // Printing Queue
+    public void display(){
+        if (isEmpty()){
+            System.out.println("Queue is Empty");
+        }
+        else{
+            for (int i = front; i <= rear; i++) {
+                System.out.print(items[i] + " ");
+            }
+        }
+    }
