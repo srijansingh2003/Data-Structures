@@ -52,4 +52,19 @@ public class CircularQueue {
         }
     }
 
-}
+    // Removing element from the Circular Queue
+    public void deQueue() {
+        if (isEmpty()) {
+            System.out.println("Queue is empty");
+        } else {
+            int item = items[front];
+            if (front == rear) {
+                front = -1;
+                rear = -1;
+            } else if (front == max - 1) {
+                front = 0;
+            } else {
+                front++;
+            }
+        }
+    }
