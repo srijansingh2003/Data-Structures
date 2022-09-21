@@ -23,4 +23,11 @@ public class CircularQueue {
             return false;
         }
     }
+
+    public Boolean isEmpty() {
+        if (front == -1)
+            return true;
+        else
+            return false;
+    }
 }
