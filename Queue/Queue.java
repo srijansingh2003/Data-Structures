@@ -2,11 +2,13 @@ package Queue;
 
 class Queue {
     int items[];
+    int max;
     int front;
     int rear;
 
     Queue(int size) {
         items = new int[size];
+        max = size;
         front = -1;
         rear = -1;
     }
@@ -29,7 +31,7 @@ class Queue {
 
     // Inserting an element in a Queue
     public void enQueue(int x) {
-        if (isFull(size)) {
+        if (isFull(max)) {
             System.out.println("Queue is full");
         } else {
             if (front == -1)
@@ -40,7 +42,7 @@ class Queue {
     }
 
     // Removing an element from Queue
-    public int deQueue() {
+    public void deQueue() {
         int x;
         if (isEmpty()) {
             System.out.println("Queue is empty");
@@ -53,20 +55,33 @@ class Queue {
                 front++;
             }
         }
-        System.out.println("Deleted:" + x);
-        return x;
+        // System.out.println("Deleted:" + x);
+        // return x;
     }
 
-}
-
     // Printing Queue
-    public void display(){
-        if (isEmpty()){
+    public void display() {
+        if (isEmpty()) {
             System.out.println("Queue is Empty");
-        }
-        else{
+        } else {
             for (int i = front; i <= rear; i++) {
                 System.out.print(items[i] + " ");
             }
         }
+        System.out.println();
     }
+
+    public static void main(String[] args) {
+        Queue q = new Queue(5);
+
+        q.enQueue(4);
+        q.enQueue(3);
+        q.enQueue(6);
+        q.display();
+        q.deQueue();
+        q.display();
+        q.enQueue(5);
+        q.display();
+
+    }
+}
