@@ -40,11 +40,10 @@ public class CircularQueue {
         if (isFull(max)) {
             System.out.println("Queue is full");
         } else {
-            if (front == -1) {
+            if (front == -1)
                 front = 0;
-                rear = (rear + 1) % max;
-                items[rear] = x;
-            }
+            rear = (rear + 1) % max;
+            items[rear] = x;
         }
     }
 
@@ -71,9 +70,21 @@ public class CircularQueue {
             System.out.println("Queue is empty");
         } else {
             for (int i = front; i != rear; i = (i + 1) % max) {
-                System.out.print(items[i]);
+                System.out.print(items[i] + " ");
             }
             System.out.println();
         }
+    }
+
+    public static void main(String[] args) {
+        CircularQueue q = new CircularQueue(5);
+
+        q.enQueue(6);
+        q.enQueue(2);
+        q.enQueue(8);
+        q.enQueue(7);
+        q.display();
+        q.deQueue();
+        q.display();
     }
 }
