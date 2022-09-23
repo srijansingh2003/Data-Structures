@@ -58,10 +58,20 @@ class DoubleEndedQ {
         if (front == rear) {
             front = -1;
             rear = -1;
-        } else if (front = size - 1)
+        } else if (front == size - 1)
             front = 0;
         else
             front++;
+    }
+
+    void deleteRear() {
+        if (front == rear) {
+            front = -1;
+            rear = -1;
+        } else if (rear == 0)
+            rear = size - 1;
+        else
+            rear--;
     }
 
 }
