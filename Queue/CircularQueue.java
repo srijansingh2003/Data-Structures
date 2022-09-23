@@ -1,22 +1,20 @@
 package Queue;
 
-import javax.lang.model.util.ElementScanner14;
-
 public class CircularQueue {
     int items[];
-    int max;
+    int size;
     int front;
     int rear;
 
     CircularQueue(int size) {
         items = new int[size];
-        max = size;
+        this.size = size;
         front = -1;
         rear = -1;
     }
 
     // To check if Queue is full
-    public Boolean isFull(int size) {
+    public Boolean isFull() {
         if (front == 0 && rear == size - 1) {
             return true;
         }
@@ -37,12 +35,12 @@ public class CircularQueue {
 
     // Inserting elements in the Circular Queue
     public void enQueue(int x) {
-        if (isFull(max)) {
+        if (isFull()) {
             System.out.println("Queue is full");
         } else {
             if (front == -1)
                 front = 0;
-            rear = (rear + 1) % max;
+            rear = (rear + 1) % size;
             items[rear] = x;
         }
     }
@@ -56,10 +54,10 @@ public class CircularQueue {
             if (front == rear) {
                 front = -1;
                 rear = -1;
-            } else if (front == max - 1) {
+            } else if (front == size - 1) {
                 front = 0;
             } else {
-                front = (front + 1) % max;
+                front = (front + 1) % size;
             }
         }
     }
@@ -69,7 +67,7 @@ public class CircularQueue {
         if (isEmpty()) {
             System.out.println("Queue is empty");
         } else {
-            for (int i = front; i != rear; i = (i + 1) % max) {
+            for (int i = front; i != rear; i = (i + 1) % size) {
                 System.out.print(items[i] + " ");
             }
             System.out.println();
