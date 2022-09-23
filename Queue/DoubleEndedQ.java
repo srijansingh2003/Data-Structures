@@ -75,11 +75,19 @@ class DoubleEndedQ {
     }
 
     int getRear() {
-        if (isEmpty()) {
+        if (isEmpty() || rear < 0) {
             System.out.println("UnderFlow");
             return -1;
         }
         return items[rear];
+    }
+
+    int getFront() {
+        if (isEmpty()) {
+            System.out.println("UnderFlow");
+            return -1;
+        }
+        return items[front];
     }
 
 }
