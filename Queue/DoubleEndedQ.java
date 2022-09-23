@@ -90,4 +90,25 @@ class DoubleEndedQ {
         return items[front];
     }
 
+    void display() {
+        if (isEmpty()) {
+            System.out.println("Queue is Empty");
+        }
+        for (int i = 0; i < size; i++) {
+            System.out.print(items[i] + " ");
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+
+        DoubleEndedQ q = new DoubleEndedQ(5);
+
+        q.insertFront(2);
+        q.insertFront(5);
+        q.insertRear(8);
+        q.insertRear(7);
+        q.display();
+    }
+
 }
