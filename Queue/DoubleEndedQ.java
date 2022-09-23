@@ -13,4 +13,8 @@ class DoubleEndedQ {
         rear = 0;
     }
 
+    boolean isFull() {
+        return ((front == -1 && rear == size - 1) || front == rear + 1);
+    }
+
 }
