@@ -2,13 +2,13 @@ package Queue;
 
 class Queue {
     int items[];
-    int max;
+    int size;
     int front;
     int rear;
 
     Queue(int size) {
         items = new int[size];
-        max = size;
+        this.size = size;
         front = -1;
         rear = -1;
     }
@@ -22,7 +22,7 @@ class Queue {
     }
 
     // Checking whether Queue is full
-    public Boolean isFull(int size) {
+    public Boolean isFull() {
         if (front == 0 && rear == size - 1)
             return true;
         else
@@ -31,7 +31,7 @@ class Queue {
 
     // Inserting an element in a Queue
     public void enQueue(int x) {
-        if (isFull(max)) {
+        if (isFull()) {
             System.out.println("Queue is full");
         } else {
             if (front == -1)
