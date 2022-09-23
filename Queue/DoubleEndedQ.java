@@ -31,9 +31,24 @@ class DoubleEndedQ {
         } else if (front == 0)
             front = size - 1;
         else
-            front = front - 1;
+            front--;
 
         items[front] = x;
+    }
+
+    void insertRear(int x) {
+        if (isFull()) {
+            System.out.println("Overflow");
+        }
+        if (front == -1) {
+            front = 0;
+            rear = 0;
+        } else if (rear == size - 1)
+            rear = 0;
+        else
+            rear++;
+
+        items[rear] = x;
     }
 
 }
