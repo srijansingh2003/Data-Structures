@@ -51,4 +51,17 @@ class DoubleEndedQ {
         items[rear] = x;
     }
 
+    void deleteFront() {
+        if (isEmpty()) {
+            System.out.println("UnderFlow");
+        }
+        if (front == rear) {
+            front = -1;
+            rear = -1;
+        } else if (front = size - 1)
+            front = 0;
+        else
+            front++;
+    }
+
 }
