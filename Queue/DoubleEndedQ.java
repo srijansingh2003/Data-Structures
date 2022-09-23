@@ -74,4 +74,12 @@ class DoubleEndedQ {
             rear--;
     }
 
+    int getRear() {
+        if (isEmpty()) {
+            System.out.println("UnderFlow");
+            return -1;
+        }
+        return items[rear];
+    }
+
 }
