@@ -20,4 +20,20 @@ class DoubleEndedQ {
     boolean isEmpty() {
         return (front == -1);
     }
+
+    void insertFront(int x) {
+        if (isFull()) {
+            System.out.println("Overflow");
+        }
+        if (front == -1) {
+            front = 0;
+            rear = 0;
+        } else if (front == 0)
+            front = size - 1;
+        else
+            front = front - 1;
+
+        items[front] = x;
+    }
+
 }
