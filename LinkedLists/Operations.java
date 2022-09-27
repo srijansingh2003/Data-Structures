@@ -21,7 +21,7 @@ class Operations{
 	    Node new_node = new Node(new_data);
 	    new_node.next = prev_node.next;
 	    prev_node.next = new_node;
-	}
+    }
     
     
     public static void main(String[] args){
