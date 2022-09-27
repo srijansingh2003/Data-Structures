@@ -26,6 +26,24 @@ class Operations{
 	    new_node.next = prev_node.next;
 	    prev_node.next = new_node;
     }
+	
+    public void insertAtEnd(int new_data){
+	    Node new_node = new Node(new_data);
+	    if (head == null) {
+            head = new Node(new_data);
+            return;
+        }
+	    new_node.next = null;
+	    
+	    Node last = head;
+	    
+	    while(last.next != null){
+	        last = last.next;
+	    }
+	    
+	    last.next = new_node;
+	    return;
+     }
     
     
     public static void main(String[] args){
@@ -43,6 +61,7 @@ class Operations{
         llist.insertAtBegin(46);
         linkedlist.insertAfter(second.next,25);
         linkedlist.insertAfter(linkedlist.head,69);
+	linkedlist.insertAtEnd(99);
         linkedlist.insertAfter(linkedlist.head.next,70);
         
         while(llist.head != null){
