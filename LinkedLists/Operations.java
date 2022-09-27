@@ -44,29 +44,44 @@ class Operations{
 	    last.next = new_node;
 	    return;
      }
+	
+     boolean search(Node head, int key){
+	    Node current = head;
+	    
+	    while(current != null){
+	        if(current.data == key)
+	            return true;
+	        current = current.next;
+	    }
+	    return false;
+     }
     
     
     public static void main(String[] args){
-        Operations llist = new Operations();
+        Operations linkedlist = new Operations();
         
-        llist.head = new Node(1);
+        linkedlistlist.head = new Node(1);
         Node second = new Node(2);
         Node third = new Node(3);
         
         
-        llist.head.next = second;
+        linkedlist.head.next = second;
         second.next = third;
         
-        llist.insertAtBegin(23);
-        llist.insertAtBegin(46);
+        linkedlist.insertAtBegin(23);
+        linkedlist.insertAtBegin(46);
         linkedlist.insertAfter(second.next,25);
         linkedlist.insertAfter(linkedlist.head,69);
 	linkedlist.insertAtEnd(99);
         linkedlist.insertAfter(linkedlist.head.next,70);
+	if (linkedlist.search(linkedlist.head,25))
+          System.out.println(25 + " is found");
+        else
+          System.out.println(25 + " is not found");
         
-        while(llist.head != null){
-            System.out.print(llist.head.value + "|-->|");
-            llist.head = llist.head.next;
+        while(linkedlist.head != null){
+            System.out.print(linkedlist.head.value + "|-->|");
+            linkedlist.head = linkedlist.head.next;
         }
     }
 }
