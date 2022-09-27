@@ -12,9 +12,9 @@ class InsertBegin {
     }
     
     static void insertAtBegin(int new_data){
-        Node new_data = new Node(new_data);
-        new_data.next = head;
-        head = new_data;
+        Node new_node = new Node(new_data);
+        new_node.next = head;
+        head = new_node;
     }
     
     
@@ -30,6 +30,7 @@ class InsertBegin {
         second.next = third;
         
         llist.insertAtBegin(23);
+        llist.insertAtBegin(46);
         
         
         while(llist.head != null){
