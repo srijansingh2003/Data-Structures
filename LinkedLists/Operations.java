@@ -2,11 +2,11 @@ class Operations{
     Node head;
     
     static class Node{
-        int value;
+        int data;
         Node next;
         
         Node(int d){
-            value = d;
+            data = d;
             next = null;
         }
     }
@@ -32,7 +32,7 @@ class Operations{
 	    if (head == null) {
             head = new Node(new_data);
             return;
-        }
+            }
 	    new_node.next = null;
 	    
 	    Node last = head;
@@ -55,12 +55,20 @@ class Operations{
 	    }
 	    return false;
      }
+     
+     public void printList(){
+        Node tnode = head;
+        while(tnode != null){
+            System.out.print(tnode.data + "|-->|");
+            tnode = tnode.next;
+        }
+     }
     
     
     public static void main(String[] args){
         Operations linkedlist = new Operations();
         
-        linkedlistlist.head = new Node(1);
+        linkedlist.head = new Node(1);
         Node second = new Node(2);
         Node third = new Node(3);
         
@@ -79,9 +87,5 @@ class Operations{
         else
           System.out.println(25 + " is not found");
         
-        while(linkedlist.head != null){
-            System.out.print(linkedlist.head.value + "|-->|");
-            linkedlist.head = linkedlist.head.next;
-        }
     }
 }
