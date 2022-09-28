@@ -86,6 +86,8 @@ class Operations{
           System.out.println(25 + " is found");
         else
           System.out.println(25 + " is not found");
+	
+	linkedlist.printList();
         
     }
 }
