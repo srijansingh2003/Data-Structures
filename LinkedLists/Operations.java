@@ -43,9 +43,19 @@ class Operations{
 	    
 	    last.next = new_node;
 	    return;
-     }
+    }
 	
-     boolean search(Node head, int key){
+    public int size(){
+        Node temp = head;
+        int count = 0;
+        while (temp != null){
+            temp = temp.next;
+            count++;
+        }
+        return count;
+    }
+	
+    boolean search(Node head, int key){
 	    Node current = head;
 	    
 	    while(current != null){
@@ -54,9 +64,9 @@ class Operations{
 	        current = current.next;
 	    }
 	    return false;
-     }
+    }
      
-     public void printList(){
+    public void printList(){
         Node tnode = head;
         while(tnode != null){
             System.out.print(tnode.data + "|-->|");
@@ -88,6 +98,6 @@ class Operations{
           System.out.println(25 + " is not found");
 	
 	linkedlist.printList();
-        
+        System.out.print("\nSize:" + linkedlist.size());
     }
 }
