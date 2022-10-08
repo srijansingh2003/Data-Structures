@@ -24,4 +24,18 @@ public class doublyLinkedlist {
         head = newNode;
     }
 
+    public void insertAfter(Node prev_node, int data) {
+        if (prev_node == null) {
+            System.out.println("Previous Node cannot be null`");
+            return;
+        }
+        Node newNode = new Node(data);
+        newNode.next = prev_node.next;
+        prev_node.next = newNode;
+        new_node.prev = prev_node;
+        if (newNode.next != null) {
+            newNode.next.prev = newNode;
+        }
+
+    }
 }
